@@ -1,6 +1,19 @@
 :root{
     --backgroundColorOnSelection: #0e0e0e;
     --textColorOnSelection: #f0f0f0;
+
+    /* Color - Toast notification (Default) */
+    --backgroundColor_ToastNotification: rgba(69, 69, 69, 1);
+    --textColor_ToastNotification: rgba(240, 240, 240, .95);
+
+    --backgroundColor_ToastNotification: rgba(255, 255, 255, .97);
+    --backgroundColor_ToastNotificationActive: rgba(245, 245, 245, .97);
+    --textColor_ToastNotification: rgba(69, 69, 69, 1);
+
+     /* Additional colors */
+     --backgroundColorPage: rgba(240, 242, 245, 1);
+     --primaryLowColorWholeBorder: rgba(0,0,0,.35);
+     --secondaryLowColorWholeBorder: rgba(0,0,0,0.05);
 }
 
 /* Reset */
@@ -52,7 +65,8 @@ span::-moz-selection, p::-moz-selection, label::-moz-selection, input::-moz-sele
 /* No default decoration */
 .inputLogin,
 .buttonSwitchInput,
-.buttonSubmit{
+.buttonSubmit,
+a{
     outline: none;
     border: none;
     text-decoration: none;
@@ -63,7 +77,8 @@ span::-moz-selection, p::-moz-selection, label::-moz-selection, input::-moz-sele
 /* Cursor pointer (event) */
 .buttonSwitchInput,
 .buttonSubmit,
-.blockSupport{
+.blockSupport,
+.notificationTab{
     cursor: pointer;
 }
 
@@ -83,6 +98,7 @@ span::-moz-selection, p::-moz-selection, label::-moz-selection, input::-moz-sele
     width: 100%;
     height: 100%;
     background: rgba(0,0,0,.38);
+  /*  background: rgba(255,255,255,1);*/
     position: absolute;
     left: 0;
     top: 0;
@@ -194,3 +210,185 @@ span::-moz-selection, p::-moz-selection, label::-moz-selection, input::-moz-sele
 .blockSupport:hover{
     color: #126b9a;
 }
+
+
+/* Toast message */
+
+
+
+
+
+@media only screen and (min-width: 360px) {   
+  /*  .containerNotifications{
+        position: fixed;
+        bottom: 10px;
+        left: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        z-index: 4;
+        background: blue;
+        padding: 8px;
+    }*/
+
+    .containerNotifications{
+        width: 95%;
+     /*   background: blue;*/
+        position: fixed;
+        top: 10px;
+        left: 2.5%;
+        z-index: 4;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+
+    /*cambia el fondo segun la pantalla*/
+    .containerLogin::before{
+        background: rgba(255,255,255,1);
+    
+    }
+
+}
+
+
+/* para movil */
+
+.notificationTab{
+    width: 100%;
+   /* min-height: 85px;*/
+    position: relative;
+    border-radius: 3px;
+    opacity: 0;
+    background: var(--backgroundColor_ToastNotification);
+    color: var(--textColor_ToastNotification);
+    box-shadow: 0px 0px 4px 3px var(--primaryLowColorWholeBorder);
+    overflow: hidden;
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0;
+}
+
+
+.blockLayoutTab{
+    width: 100%;
+   /* background: orange;*/
+    font-size: 14px;
+    position: relative;
+    box-sizing: border-box;
+    padding: 0 14px;
+}
+
+.blockLayoutTab:first-child{
+    padding-top: 10px;
+}
+
+.blockLayoutTab:last-child{
+    padding-bottom: 10px;
+}
+
+
+.tabTitle{
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.blockLayoutTab a{
+    color: #126b9a;
+}
+
+.timerBar{
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: all .100s linear;
+}
+
+
+.notificationTab:active{
+    background: var(--backgroundColor_ToastNotificationActive);
+}
+
+
+
+
+/* JS - toast */
+
+.cleanTab{
+    opacity: 0;
+}
+
+.cleanTab .blockLayoutTab{
+    padding: 0;
+    line-height: 0;
+}
+
+.cleanTab-Text{
+    font-size: 1px;
+    transform: translateX(-100%);
+    margin: 0;
+    opacity: 0;
+    padding: 0;
+}
+
+.cleanTabBar{
+    height: 0;
+    transform: translateX(-100%);
+    padding: 0;
+}
+
+
+.containerNotificationTab-initialAnimation{
+    opacity: 1;
+}
+
+.containerNotificationTab-initialAnimation, .cleanTab-Text, .cleanTabBar{
+    transition: all linear .25s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 950px) {   
+    
+/*.containerNotifications{
+        position: fixed;
+        bottom: 10px;
+        left: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        z-index: 4;
+        background: red;
+        padding: 8px;
+    }
+*/
+
+  /*cambia el fondo segun la pantalla*/
+    .containerLogin::before{
+       /* background: rgba(0,0,0,.38);*/
+       background: rgba(255,255,255,1);
+    }
+
+
+
+}
+

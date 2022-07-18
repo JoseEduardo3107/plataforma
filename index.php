@@ -55,7 +55,7 @@
                 </div>
 
                 <div class="layoutBlock blockInput">
-                    <input type="submit" class="buttonSubmit" value="Iniciar sesión">
+                    <input type="button" class="buttonSubmit" value="Iniciar sesión" onclick="newToastMessage('Error al conectar', 'No existen los archivos para iniciar sesión. Recargue o informe sobre algun error.', '#D54C4C', 6000);">
                 </div>
 
                 <div class="layoutBlock blockInput blockSupport unselectableText">
@@ -77,10 +77,18 @@
         </div>
 
 
-    <!-- notificaciones toast para errores -->
-        
 
 
+
+
+
+
+
+
+
+
+    <div class="containerNotifications unselectableText" id="containerNotifications">
+    </div>
     </div>
     <script src="js/main.js">
     </script>
