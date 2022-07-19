@@ -14,9 +14,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap" rel="stylesheet">
     <!-- fontawesome (Icon) -->
     <script src="https://kit.fontawesome.com/6711e9fd0f.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div class="containerNotifications unselectableText" id="containerNotifications">
+    </div>
+    <script src="js/toastNotifications.js">
+    </script>
     <div class="mainContainer">
 
 
@@ -34,30 +39,61 @@
                     <h2><span>Mi</span>Portal</h2>
                 </div>
 
-                <div class="layoutBlock blockInput">
-                    <label class="unselectableText">
-                        Correo ó nombre de usuario
-                    </label>
-                    <input type="text" class="inputLogin">
-                </div>
 
-                <div class="layoutBlock blockInput">
-                    <label class="unselectableText">
-                        Contraseña
-                    </label>
-                    <div class="inputBox">
-                        <div class="inputContainer">
-                            <input type="password" class="inputLogin" id="inputPassword">
-                        </div>
-                        <div class="inputContainer">
-                            <input type="button" class="buttonSwitchInput" value="Mostrar" id="buttonSwitchInput" onclick="switchInputPasswordMode();">
+                <form action="" method="post">
+
+                    <div class="layoutBlock blockInput">
+                        <label class="unselectableText">
+                            Correo ó nombre de usuario
+                        </label>
+                        <input type="text" class="inputLogin">
+                    </div>
+
+                    <div class="layoutBlock blockInput">
+                        <label class="unselectableText">
+                            Contraseña
+                        </label>
+                        <div class="inputBox">
+                            <div class="inputContainer">
+                                <input type="password" class="inputLogin" id="inputPassword">
+                            </div>
+                            <div class="inputContainer">
+                                <input type="button" class="buttonSwitchInput" value="Mostrar" id="buttonSwitchInput" onclick="switchInputPasswordMode();">
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="layoutBlock blockInput">
-                    <input type="button" class="buttonSubmit" value="Iniciar sesión" onclick="newToastMessage('Error al conectar', 'No existen los archivos para iniciar sesión. Recargue o informe sobre algun error.', '#D54C4C', 6000);">
-                </div>
+                    <div class="layoutBlock blockInput">
+                        <input type="submit" class="buttonSubmit" value="Iniciar sesión">
+                    </div>
+
+
+
+                </form>
+
+
+
+            <?php
+
+                require('php/connection.php');
+
+                // conectar a la base de datos
+                conectarDBO::conexion();
+
+                // Error al cargar los estilos de fuente en: ToastNotification
+                // Solucionar en el siguiente commit
+
+            ?>
+
+
+
+
+
+
+
+
+
+
 
                 <div class="layoutBlock blockInput blockSupport unselectableText">
                     <span>
@@ -122,8 +158,7 @@
 
 
 
-    <div class="containerNotifications unselectableText" id="containerNotifications">
-    </div>
+    
     </div>
     <script src="js/main.js">
     </script>
