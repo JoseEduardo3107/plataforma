@@ -9,10 +9,11 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
     <meta charset="UTF-8">
     <meta lang="es-ES">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap" rel="stylesheet">
+    <!-- fontawesome (Icon) -->
+    <script src="https://kit.fontawesome.com/6711e9fd0f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -65,6 +66,11 @@
                 </div>
                 <div class="layoutBlock blockInput blockSupport unselectableText">
                     <span>
+                        Crear cuenta
+                    </span>
+                </div>
+                <div class="layoutBlock blockInput blockSupport unselectableText">
+                    <span>
                         ¿Necesitas ayuda? Contáctanos
                     </span>
                 </div>
@@ -78,10 +84,39 @@
 
 
 
+        <footer class="footer">
+            <div class="informationSection">
+                <div class="iconsFooter unselectableText">
+                        <a href="link">
+                            <span class="iconFooter">
+                                <i class="fa-brands fa-instagram"></i>
+                            </span>
+                        </a>
+                        <a href="link">
+                            <span class="iconFooter">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </span>
+                        </a>
+                        <a href="link">
+                            <span class="iconFooter">
+                                <i class="fa-solid fa-phone"></i>
+                            </span>
+                        </a>
+                        <a href="link">
+                            <span class="iconFooter">
+                                <i class="fa-solid fa-at"></i>
+                            </span>
+                        </a>
+                </div>
+            </div>
+            <div class="textFooter">
+                <p>&copy; Profesor. Carlos Ortiz Solis</p>
+                <p>Todos los derechos reservados</p>
+            </div>
+        </footer>
 
 
-
-
+        
 
 
 

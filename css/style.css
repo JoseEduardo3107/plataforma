@@ -74,7 +74,8 @@ a{
 .buttonSwitchInput,
 .buttonSubmit,
 .blockSupport,
-.notificationTab{
+.notificationTab,
+.iconFooter{
     cursor: pointer;
 }
 
@@ -220,25 +221,7 @@ a{
     gap: 8px;
 }
 
-@media only screen and (max-width: 850px) {   
-    .containerNotifications{
-        width: 95%;
-        position: fixed;
-        top: 10px;
-        bottom: inherit;
-        left: 2.5%;
-        z-index: 4;
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: flex-start;
-        gap: 8px;
-    }
 
-    /* If the image cannot visible */
-    .containerLogin::before{
-        background: rgba(255,255,255,1);
-    }
-}
 
 .notificationTab{
     width: 100%;
@@ -327,4 +310,86 @@ a{
 
 .containerNotificationTab-initialAnimation, .cleanTab-Text, .cleanTabBar{
     transition: all linear .25s;
+}
+
+/* Footer */
+.footer{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 35px 15px 20px 15px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.textFooter{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 14px;
+    color: #3a3a3a;
+    border-top: 1px solid rgba(58,58,58,.3);
+    text-align: center;
+}
+
+
+.iconsFooter{
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.iconFooter:hover{
+    opacity: .85;
+    background: #126b9a;
+    color: #f0f0f0;
+    border-color: #126b9a;
+}
+
+.iconFooter{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: inherit;
+    border: 1px solid rgba(58,58,58,.6);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #3a3a3a;
+}
+
+/* Responsive */
+@media only screen and (max-width: 850px) {   
+    .containerNotifications{
+        width: 95%;
+        position: fixed;
+        top: 10px;
+        bottom: inherit;
+        left: 2.5%;
+        z-index: 4;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    /* If the image cannot visible */
+    .containerLogin::before{
+        background: rgba(255,255,255,1);
+    }
+
+    .footer{
+        flex-direction: column-reverse;
+    
+    }
+
 }
