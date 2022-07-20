@@ -18,72 +18,12 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    
+    <div class="mainContainer">
     <div class="containerNotifications unselectableText" id="containerNotifications">
     </div>
     <script src="js/toastNotifications.js">
     </script>
-    <div class="mainContainer">
-
-
-
-        <div class="containerLogin">
-
-
-            <div class="layoutLogin">
-
-                <div class="layoutBlock logoImage">
-                    <img src="resource/img/LogoPNG.png" class="logoLogin unselectableText" alt="Logo">
-                </div>
-
-                <div class="layoutBlock logoText unselectableText">
-                    <h2><span>Mi</span>Portal</h2>
-                </div>
-
-
-                <form action="" method="post">
-
-                    <div class="layoutBlock blockInput">
-                        <label class="unselectableText">
-                            Correo ó nombre de usuario
-                        </label>
-                        <input type="text" class="inputLogin">
-                    </div>
-
-                    <div class="layoutBlock blockInput">
-                        <label class="unselectableText">
-                            Contraseña
-                        </label>
-                        <div class="inputBox">
-                            <div class="inputContainer">
-                                <input type="password" class="inputLogin" id="inputPassword">
-                            </div>
-                            <div class="inputContainer">
-                                <input type="button" class="buttonSwitchInput" value="Mostrar" id="buttonSwitchInput" onclick="switchInputPasswordMode();">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="layoutBlock blockInput">
-                        <input type="submit" class="buttonSubmit" value="Iniciar sesión">
-                    </div>
-
-
-
-                </form>
-
-
-
-            <?php
-
-                require('php/connection.php');
-
-                // conectar a la base de datos
-                conectarDBO::conexion();
-
-                // Error al cargar los estilos de fuente en: ToastNotification
-                // Solucionar en el siguiente commit
-
-            ?>
 
 
 
@@ -92,65 +32,24 @@
 
 
 
+        
+        <?php
+        
+        require('php/connection.php');
+        // LOGIN
+            include('elements/loginForm.php');
+        ?>
 
 
 
-                <div class="layoutBlock blockInput blockSupport unselectableText">
-                    <span>
-                        ¿Olvidaste la contraseña?
-                    </span>
-                </div>
-                <div class="layoutBlock blockInput blockSupport unselectableText">
-                    <span>
-                        Crear cuenta
-                    </span>
-                </div>
-                <div class="layoutBlock blockInput blockSupport unselectableText">
-                    <span>
-                        ¿Necesitas ayuda? Contáctanos
-                    </span>
-                </div>
 
 
 
-            </div>
 
-
-        </div>
-
-
-
-        <footer class="footer">
-            <div class="informationSection">
-                <div class="iconsFooter unselectableText">
-                        <a href="link">
-                            <span class="iconFooter">
-                                <i class="fa-brands fa-instagram"></i>
-                            </span>
-                        </a>
-                        <a href="link">
-                            <span class="iconFooter">
-                                <i class="fa-brands fa-whatsapp"></i>
-                            </span>
-                        </a>
-                        <a href="link">
-                            <span class="iconFooter">
-                                <i class="fa-solid fa-phone"></i>
-                            </span>
-                        </a>
-                        <a href="link">
-                            <span class="iconFooter">
-                                <i class="fa-solid fa-at"></i>
-                            </span>
-                        </a>
-                </div>
-            </div>
-            <div class="textFooter">
-                <p>&copy; Profesor. Carlos Ortiz Solis</p>
-                <p>Todos los derechos reservados</p>
-            </div>
-        </footer>
-
+        <?php
+        // FOOTER
+            include('elements/footer.php');
+        ?>
 
         
 
