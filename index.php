@@ -1,3 +1,18 @@
+<?php
+
+session_start();
+header("Content-Type: text/html;charset=utf-8");
+
+?>
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="es-ES" charset="UTF-8">
 <head>
@@ -29,17 +44,27 @@
 
 
 
-
-
-
-        
         <?php
-        
-        require('php/connection.php');
-        // LOGIN
-            include('elements/loginForm.php');
-        ?>
 
+            if (empty($_SESSION['user'])){
+               // echo "no estas registrado";
+              //  die();
+              include('elements/loginForm.php');
+            }else{
+
+                        // panel de control
+                ?>
+                
+                    <a href="elements/exitBtn.php">Cerrar Sesion</a>
+                
+                <?php
+
+            }
+
+        
+        // LOGIN
+            
+        ?>
 
 
 

@@ -8,17 +8,6 @@ formularioPrueba.onsubmit = function(e){
 function loginForm(){
     const formData = new FormData(formularioPrueba);
 
-// Sin JQuery
-
-/*const xhr = new XMLHttpRequest();
-xhr.open('POST', 'php/login.php', true);
-xhr.addEventListener('load', e =>{
-    if(e.target.readyState == 4 && e.target.status == 200){
-        //Respuesta
-    }
-});
-xhr.send(formData);*/
-
     // Con JQuery
     $.ajax({
         url: 'php/login.php',
@@ -30,16 +19,15 @@ xhr.send(formData);*/
         processData: false
     }).done(function(respuesta){
 
-        newToastMessage("Correcto", respuesta, "green", 5000);
 
-
-    //  document.location.href = 'home.php';
-        
-
+        if(respuesta != ""){
+            newToastMessage("Error", respuesta, "#DA3B3B", 5000);
+        }else{
+            window.location.replace("index.php");
+        }
 
 
     }).fail(function(e){
-        newToastMessage("No se realizó la consulta", "Revisar código", "red", 6000);
-        
+        newToastMessage("No se realizó la consulta", "Revisar código", "red", 6000);        
     });
 }
