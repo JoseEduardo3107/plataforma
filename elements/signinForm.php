@@ -4,45 +4,77 @@
             <img src="resource/img/LogoPNG.png" class="logoLogin unselectableText" alt="Logo">
         </div>
         <div class="layoutBlock logoText unselectableText">
-            <h2><span>Mi</span>Portal</h2>
+            <h2><span>Mi</span>Portal (Profesores)</h2>
         </div>
-    <form method="post" autocomplete="off" id="formLogIn">
+
+
+
+
+
+
+
+    <form method="post" autocomplete="off" id="formSignIn">
+
+
             <div class="layoutBlock blockInput">
                 <label class="unselectableText">
-                    Correo ó nombre de usuario
+                    Correo electrónico
                 </label>
                 <input type="text" class="inputLogin" name="username">
             </div>
+
+
             <div class="layoutBlock blockInput">
                 <label class="unselectableText">
                     Contraseña
                 </label>
                 <div class="inputBox">
                     <div class="inputContainer">
-                        <input type="password" class="inputLogin" id="inputPassword" name="password">
+                        <input type="password" class="inputLogin" name="password">
                     </div>
                     <div class="inputContainer">
                         <input type="button" class="buttonSwitchInput" value="Mostrar" id="buttonSwitchInput" onclick="switchInputPasswordMode(this);">
                     </div>
                 </div>
             </div>
+
             <div class="layoutBlock blockInput">
-                <input type="submit" class="buttonSubmit" value="Iniciar sesión">
+                <label class="unselectableText">
+                    Repetir contraseña
+                </label>
+                <div class="inputBox">
+                    <div class="inputContainer">
+                        <input type="password" class="inputLogin" name="passwordVerify">
+                    </div>
+                    <div class="inputContainer">
+                        <input type="button" class="buttonSwitchInput" value="Mostrar" onclick="switchInputPasswordMode(this);">
+                    </div>
+                </div>
             </div>
+
+
+
+
+
+
+            <div class="layoutBlock blockInput">
+                <input type="submit" class="buttonSubmit" value="Registrar">
+            </div>
+
+
         </form>
+
+
+
+
+
+
+
+
+
         <div class="layoutBlock blockInput blockSupport unselectableText">
             <span>
-                ¿Olvidaste la contraseña?
-            </span>
-        </div>
-        <div class="layoutBlock blockInput blockSupport unselectableText">
-            <span>
-                Crear cuenta
-            </span>
-        </div>
-        <div class="layoutBlock blockInput blockSupport unselectableText">
-            <span>
-                ¿Necesitas ayuda? Contáctanos
+                ¿Ya tienes cuenta? Inicia sesión
             </span>
         </div>
     </div>
@@ -67,5 +99,5 @@
 
 
 
-<script src="../js/login.js">
+<script src="../js/signin.js">
 </script>

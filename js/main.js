@@ -1,12 +1,12 @@
-function switchInputPasswordMode(){
-    let buttonSwitch = document.getElementById('buttonSwitchInput');
-    let inputPassword = document.getElementById('inputPassword');
+function switchInputPasswordMode(button){
+    let containerElements = button.parentNode.parentNode;
+    let input = containerElements.getElementsByClassName('inputLogin');
 
-    if(inputPassword.type == "password"){
-        inputPassword.type = "text";
-        buttonSwitch.value = "Ocultar";
+    if(input[0].type == "password"){
+        input[0].type = "text";
+        button.value = "Ocultar";
     }else{
-        inputPassword.type = "password";
-        buttonSwitch.value = "Mostrar";
+        input[0].type = "password";
+        button.value = "Mostrar";
     }
 }

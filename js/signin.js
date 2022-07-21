@@ -1,12 +1,18 @@
-let formSubmit = document.getElementById('formLogIn');
+let formSubmit = document.getElementById('formSignIn');
 
 formSubmit.onsubmit = function(e){
     e.preventDefault();
-    loginForm();
+    signinForm();
+}
+
+
+
+function signinForm(){
+    const formData = new FormData(formSubmit);
 }
 
 function loginForm(){
-    const formData = new FormData(formSubmit);
+    
 
     // Con JQuery
     $.ajax({

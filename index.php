@@ -49,7 +49,8 @@ header("Content-Type: text/html;charset=utf-8");
             if (empty($_SESSION['user'])){
                // echo "no estas registrado";
               //  die();
-              include('elements/loginForm.php');
+             // include('elements/loginForm.php');
+              include('elements/signinForm.php');
             }else{
 
                         // panel de control
