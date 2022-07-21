@@ -1,9 +1,13 @@
 <?php
 session_start();
 
-$user = strip_tags(htmlspecialchars($_POST['username']));
-$password = strip_tags(htmlspecialchars($_POST['password']));
-$passwordVerify = strip_tags(htmlspecialchars($_POST['passwordVerify']));
+
+$user = strip_tags(htmlspecialchars($_POST['userEmail']));
+$userName = strip_tags(htmlspecialchars($_POST['userName']));
+$userLastname1 = strip_tags(htmlspecialchars($_POST['userLastname1']));
+$userLastname2 = strip_tags(htmlspecialchars($_POST['userLastname2']));
+$password = strip_tags(htmlspecialchars($_POST['userPassword']));
+$userPasswordVerify = strip_tags(htmlspecialchars($_POST['userPasswordVerify']));
 
 $errorMessage = "";
 
@@ -38,13 +42,19 @@ try{
 
         try{
 
+            // crear nombre de usuario
+            $DynamicUsername = "12345";
 
-            $queryData = "INSERT INTO basic_user_information(EMAIL, USER_PASSWORD, USER_DATE_JOINED) VALUES(:user_email, :user_password, now());";
+            $queryData = "INSERT INTO BASIC_USER_INFORMATION(USER_NAME_SYS, USER_NAME, USER_LAST_NAME1, USER_LAST_NAME2, USER_PASSWORD, USER_DATE_JOINED, EMAIL) VALUES (:user, :user_name, :user_lastname1, :user_lastname2, :user_password, now(), :user_email);";
+
             $responseSQL = conectarDBO::conexion()->prepare($queryData);
-
-
-            $responseSQL->bindValue(":user_email", $user);
+            $responseSQL->bindValue(":user", $DynamicUsername);
+            $responseSQL->bindValue(":user_name", $userName);
+            $responseSQL->bindValue(":user_lastname1", $userLastname1);
+            $responseSQL->bindValue(":user_lastname2", $userLastname2);
             $responseSQL->bindValue(":user_password", $hash);
+            $responseSQL->bindValue(":user_email", $user);
+
             $responseSQL->execute();
 
 
@@ -58,10 +68,6 @@ try{
 
             $errorMessage .= "Ocurrió un error al escribir los datos en la base";
         }
-
-
-
-
 
 
 

@@ -1,5 +1,5 @@
 <div class="containerLogin">
-    <div class="layoutLogin">
+    <div class="layoutLogin layoutSignin">
         <div class="layoutBlock logoImage">
             <img src="resource/img/LogoPNG.png" class="logoLogin unselectableText" alt="Logo">
         </div>
@@ -20,7 +20,34 @@
                 <label class="unselectableText">
                     Correo electrónico
                 </label>
-                <input type="text" class="inputLogin" name="username">
+                <input type="text" class="inputLogin" name="userEmail">
+            </div>
+
+
+            
+            <div class="layoutBlock blockInput">
+                <label class="unselectableText">
+                    Nombre(s)
+                </label>
+                <input type="text" class="inputLogin" name="userName">
+            </div>
+
+
+            
+            <div class="layoutBlock blockInput">
+                <label class="unselectableText">
+                    Primer apellido
+                </label>
+                <input type="text" class="inputLogin" name="userLastname1">
+            </div>
+
+
+                
+            <div class="layoutBlock blockInput">
+                <label class="unselectableText">
+                    Segundo apellido
+                </label>
+                <input type="text" class="inputLogin" name="userLastname2">
             </div>
 
 
@@ -30,7 +57,7 @@
                 </label>
                 <div class="inputBox">
                     <div class="inputContainer">
-                        <input type="password" class="inputLogin" name="password">
+                        <input type="password" class="inputLogin" name="userPassword">
                     </div>
                     <div class="inputContainer">
                         <input type="button" class="buttonSwitchInput" value="Mostrar" id="buttonSwitchInput" onclick="switchInputPasswordMode(this);">
@@ -44,7 +71,7 @@
                 </label>
                 <div class="inputBox">
                     <div class="inputContainer">
-                        <input type="password" class="inputLogin" name="passwordVerify">
+                        <input type="password" class="inputLogin" name="userPasswordVerify">
                     </div>
                     <div class="inputContainer">
                         <input type="button" class="buttonSwitchInput" value="Mostrar" onclick="switchInputPasswordMode(this);">
