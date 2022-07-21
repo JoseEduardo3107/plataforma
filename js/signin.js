@@ -6,17 +6,12 @@ formSubmit.onsubmit = function(e){
 }
 
 
-
 function signinForm(){
     const formData = new FormData(formSubmit);
-}
-
-function loginForm(){
     
-
     // Con JQuery
     $.ajax({
-        url: 'php/login.php',
+        url: 'php/signin.php',
         type: 'POST',
         dataType: 'html',
         data: formData,
@@ -26,11 +21,12 @@ function loginForm(){
     }).done(function(response){
 
 
-        if(response != ""){
-            newToastMessage("Error", response, "#DA3B3B", 5000);
-        }else{
+      /*  if(response != ""){*/
+           //newToastMessage("Error", response, "#DA3B3B", 5000);
+            newToastMessage("Respuesta", response, "aqua");
+       /* }else{
             window.location.replace("index.php");
-        }
+        }*/
 
 
     }).fail(function(e){

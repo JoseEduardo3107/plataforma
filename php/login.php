@@ -8,9 +8,12 @@ $errorMessage = "";
 require('connection.php');
 
 try{
-    $queryUsers = "SELECT * FROM basic_user_information WHERE USER_NAME = :userName;";
+    $queryUsers = "SELECT * FROM basic_user_information WHERE USER_NAME = :userName OR EMAIL = :user_email;";
     $response = conectarDBO::conexion()->prepare($queryUsers);
     $response->bindValue(":userName", $user);
+    $response->bindValue(":user_email", $user);
+
+
     $response->execute();
     $responseReturned = $response->rowCount();
 
