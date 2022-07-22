@@ -11,7 +11,7 @@
                 <label class="unselectableText">
                     Correo ó nombre de usuario
                 </label>
-                <input type="text" class="inputLogin" name="username">
+                <input type="text" class="inputLogin" name="username" id="inputUsername">
             </div>
             <div class="layoutBlock blockInput">
                 <label class="unselectableText">

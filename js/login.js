@@ -2,7 +2,16 @@ let formSubmit = document.getElementById('formLogIn');
 
 formSubmit.onsubmit = function(e){
     e.preventDefault();
-    loginForm();
+
+    let issues = checkFormLogin();
+
+    if(issues.length != 0){
+        for(i = 0; i < issues.length; i++){
+            newToastMessage("Revisar campos",  issues[i], "red", 4000);    
+        }
+    }else{
+        loginForm();
+    }
 }
 
 function loginForm(){
