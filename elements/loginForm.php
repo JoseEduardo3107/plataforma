@@ -11,7 +11,7 @@
                 <label class="unselectableText">
                     Correo ó nombre de usuario
                 </label>
-                <input type="text" class="inputLogin" name="username" id="inputUsername">
+                <input type="text" class="inputLogin" name="username" id="inputUsername" minlength="5" maxlength="300" required>
             </div>
             <div class="layoutBlock blockInput">
                 <label class="unselectableText">
@@ -19,7 +19,7 @@
                 </label>
                 <div class="inputBox">
                     <div class="inputContainer">
-                        <input type="password" class="inputLogin" id="inputPassword" name="password">
+                        <input type="password" class="inputLogin" id="inputPassword" name="password" minlength="6" maxlength="400" required>
                     </div>
                     <div class="inputContainer">
                         <input type="button" class="buttonSwitchInput" value="Mostrar" id="buttonSwitchInput" onclick="switchInputPasswordMode(this);">

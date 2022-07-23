@@ -2,7 +2,15 @@ let formSubmit = document.getElementById('formSignIn');
 
 formSubmit.onsubmit = function(e){
     e.preventDefault();
-    signinForm();
+    let issues = checkFormSignin();
+
+    if(issues.length != 0){
+        for(i = 0; i < issues.length; i++){
+            newToastMessage("Revisar campos",  issues[i], "red", 4000);    
+        }
+    }else{
+        signinForm();
+    }
 }
 
 

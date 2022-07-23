@@ -20,7 +20,7 @@
                 <label class="unselectableText">
                     Correo electrónico
                 </label>
-                <input type="text" class="inputLogin" name="userEmail">
+                <input type="text" class="inputLogin" name="userEmail" id="inputUserEmail" minlength="5" maxlength="300" required>
             </div>
 
 
@@ -29,7 +29,7 @@
                 <label class="unselectableText">
                     Nombre(s)
                 </label>
-                <input type="text" class="inputLogin" name="userName">
+                <input type="text" class="inputLogin" name="userName" id="inputUsername" minlength="3" maxlength="250" required>
             </div>
 
 
@@ -38,7 +38,7 @@
                 <label class="unselectableText">
                     Primer apellido
                 </label>
-                <input type="text" class="inputLogin" name="userLastname1">
+                <input type="text" class="inputLogin" name="userLastname1" id="inputUserLastname1" minlength="3" maxlength="150" required>
             </div>
 
 
@@ -47,7 +47,7 @@
                 <label class="unselectableText">
                     Segundo apellido
                 </label>
-                <input type="text" class="inputLogin" name="userLastname2">
+                <input type="text" class="inputLogin" name="userLastname2" id="inputUserLastname2" minlength="3" maxlength="150" required>
             </div>
 
 
@@ -57,10 +57,10 @@
                 </label>
                 <div class="inputBox">
                     <div class="inputContainer">
-                        <input type="password" class="inputLogin" name="userPassword">
+                        <input type="password" class="inputLogin" name="userPassword" id="inputUserPassword" minlength="6" maxlength="400" required>
                     </div>
                     <div class="inputContainer">
-                        <input type="button" class="buttonSwitchInput" value="Mostrar" id="buttonSwitchInput" onclick="switchInputPasswordMode(this);">
+                        <input type="button" class="buttonSwitchInput" value="Mostrar" onclick="switchInputPasswordMode(this);">
                     </div>
                 </div>
             </div>
@@ -71,13 +71,16 @@
                 </label>
                 <div class="inputBox">
                     <div class="inputContainer">
-                        <input type="password" class="inputLogin" name="userPasswordVerify">
+                        <input type="password" class="inputLogin" name="userPasswordVerify" id="inputUserPasswordVerify" minlength="6" maxlength="400" required>
                     </div>
                     <div class="inputContainer">
                         <input type="button" class="buttonSwitchInput" value="Mostrar" onclick="switchInputPasswordMode(this);">
                     </div>
                 </div>
             </div>
+
+
+            
 
 
 

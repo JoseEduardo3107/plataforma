@@ -17,6 +17,7 @@ header("Content-Type: text/html;charset=utf-8");
 <html lang="es-ES" charset="UTF-8">
 <head>
     <title>Plataforma</title>
+    <link rel="icon" href="resource/img/LogoPNG.png">
     <!--[if IE]>
         <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <![endif]-->
@@ -49,8 +50,8 @@ header("Content-Type: text/html;charset=utf-8");
             if (empty($_SESSION['user'])){
                // echo "no estas registrado";
               //  die();
-              include('elements/loginForm.php');
-              //include('elements/signinForm.php');
+              //include('elements/loginForm.php');
+              include('elements/signinForm.php');
             }else{
 
                         // panel de control
